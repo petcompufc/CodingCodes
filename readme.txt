@@ -1,7 +1,7 @@
 
 	
 
-	Nesse repositório serão armazenados os códigos desenvolvidos pelos instrutores e alunos do 		Coding, Projeto de Extensão do PET Computação UFC.
+	Nesse repositório serão armazenados os códigos desenvolvidos pelos instrutores e alunos do Coding, Projeto de Extensão do PET Computação UFC.
 
 	Sumário:
 
