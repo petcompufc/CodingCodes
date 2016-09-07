@@ -138,6 +138,7 @@ int qntDays(int year, int month, int day)
 	}
 }
 
+// Função Main para Testes
 int main()
 {
 	cout << qntDays(2017, 1, 25) << endl;
