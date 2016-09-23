@@ -13,7 +13,6 @@ Sumário:
 	      -> Q03_05.cpp	// Sistema de Criptografia programado com POO.
 	      -> Q03_06.cpp	// Sistema cópia simplória de uma Rede Social (Facebook).
 
-	-> 2016
 	   -> 03 Setembro - Exercícios de Revisão (Parte 2)
 	      -> Q04_01.cpp	// Exercício de Vetor: Separação de Números Pares e Ímpares.
 	      -> Q04_02.cpp	// Exercício de Lógica: Contagem de Troco em Notas e Moedas.
@@ -21,3 +20,8 @@ Sumário:
 	      -> Q04_04.cpp	// Exercício de Vetor/Lógica: Busca de "Maior Primo".
 	      -> Q04_05.cpp	// Exercício-Desafio de Lógica: Diferença de Datas.
 
+	   -> 10 Setembro - Treinamento Jedi em Matemática
+	      -> Q05_01.cpp	// Soma dos Divisíveis por 3 e 5.
+	      -> Q05_02.cpp	// Cálculo de Ultrapassagem por Velocidade Máxima Permitida.
+	      -> Q05_03.cpp	// Impressão em Ordem Crescente dos Números Divisíveis.
+	      -> Q05_04.cpp	// Cálculos Genéricos de Rendimento sobre uma Turma.
