@@ -20,8 +20,16 @@ Sumário:
 	      -> Q04_04.cpp	// Exercício de Vetor/Lógica: Busca de "Maior Primo".
 	      -> Q04_05.cpp	// Exercício-Desafio de Lógica: Diferença de Datas.
 
-	   -> 10 Setembro - Treinamento Jedi em Matemática
+	   -> 10 Setembro - Algoritmos e Lógica da Programação
 	      -> Q05_01.cpp	// Soma dos Divisíveis por 3 e 5.
 	      -> Q05_02.cpp	// Cálculo de Ultrapassagem por Velocidade Máxima Permitida.
 	      -> Q05_03.cpp	// Impressão em Ordem Crescente dos Números Divisíveis.
 	      -> Q05_04.cpp	// Cálculos Genéricos de Rendimento sobre uma Turma.
+
+	   -> 17 Setembro - Treinamento Jedi em Matemática
+	      -> Q06_01.cpp	// Impressão de Todos os Múltiplos de um Número.
+	      -> Q06_02.cpp	// Soma de Números Primos.
+	      -> Q06_03.cpp	// Fatoração em Números Primos.
+	      -> Q06_04.cpp	// Jogo de Adivinhação com Números Aleatórios.
+	      -> Q06_05.cpp	// Testes com Lógica Booleana
+	      -> Q06_06.cpp	// Converter Decimal em Notação Científica.
