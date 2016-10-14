@@ -41,3 +41,10 @@ Sumário:
 	      -> Q07_04.cpp	// Figuras Geométricas
 	      -> Q07_05.cpp	// O Tronsleiro	
 
+	   -> 08 Outubro - Computação Aplicada ao ENEM!
+	      -> Q08_01.cpp	// Infecção no Granjeiro!
+	      -> Q08_02.cpp	// Papel A0
+	      -> Q08_03.cpp	// Tiro ao Alvo
+	      -> Q08_04.cpp	// Pizzas Congeladas
+	      -> Q08_05.cpp	// Azulejos e Latejos
+
