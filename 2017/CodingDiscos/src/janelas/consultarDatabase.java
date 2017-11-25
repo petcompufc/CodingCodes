@@ -1,5 +1,7 @@
 package janelas;
 import javax.swing.JFrame;
+import java.io.*;
+import javax.swing.DefaultListModel;
 
 public class consultarDatabase extends javax.swing.JFrame {
 
@@ -29,6 +31,11 @@ public class consultarDatabase extends javax.swing.JFrame {
         btVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         lstProduto.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -78,44 +85,41 @@ public class consultarDatabase extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(tituloJanela)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(tituloJanela))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(produtos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(artista)
-                                        .addComponent(descricao))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane2)
-                                        .addComponent(cmpArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(titulo)
-                                        .addComponent(codigo))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(artista)
+                                                .addComponent(descricao)))
+                                        .addComponent(codigo, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(titulo, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cmpCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
-                                        .addComponent(cmpTitulo))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(preco)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmpPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(cmpCodigo)
+                                        .addComponent(cmpTitulo, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(cmpArtista, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(preco)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cmpPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +127,10 @@ public class consultarDatabase extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(tituloJanela)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(produtos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cmpCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,14 +150,10 @@ public class consultarDatabase extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(preco)
-                            .addComponent(cmpPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(produtos)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(btVoltar)
-                .addContainerGap(44, Short.MAX_VALUE))
+                            .addComponent(cmpPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btVoltar)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -170,7 +173,22 @@ public class consultarDatabase extends javax.swing.JFrame {
     // FUNCIONALIDADES DA LISTA DE PRODUTOS
     ///////////////////////////////////
     private void lstProdutoValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstProdutoValueChanged
-        // TODO add your handling code here:
+        String codigo = lstProduto.getSelectedValue();
+        cmpCodigo.setText(codigo);
+        
+        try {
+            File file = new File("database/produtos/" + codigo + ".txt");
+            FileReader fReader = new FileReader(file);
+            BufferedReader bReader = new BufferedReader(fReader);
+            
+            cmpTitulo.setText(bReader.readLine());
+            cmpArtista.setText(bReader.readLine());
+            cmpDescricao.setText(bReader.readLine());
+            cmpPreco.setText(bReader.readLine());
+            
+        } catch(Exception e){}
+        
+        
     }//GEN-LAST:event_lstProdutoValueChanged
     
     
@@ -183,6 +201,39 @@ public class consultarDatabase extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btVoltarActionPerformed
 
+    
+    
+    
+    
+    
+    
+    
+    // FUNCIONALIDADES QUANDO A JANELA É ABERTA
+    ////////////////////////////////////////////
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        int qtdProdutos = 0;
+        try{
+            File file = new File("database/statusLoja.txt");
+            FileReader fReader = new FileReader(file);
+            BufferedReader bReader = new BufferedReader(fReader);
+            
+            bReader.readLine(); bReader.readLine(); bReader.readLine();
+            qtdProdutos = Integer.parseInt(bReader.readLine());
+            
+        } catch(Exception e){}
+        
+        // Adicionando os Elementos na Lista
+        DefaultListModel listModel = new DefaultListModel();
+        
+        for(int i = 1; i <= qtdProdutos; i++) {
+            listModel.addElement(Integer.toString(i));
+        }
+        
+        lstProduto.setModel(listModel);
+    }//GEN-LAST:event_formWindowOpened
+
+    
+    
     
     
     

@@ -57,7 +57,7 @@ public class menuPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(titulo)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

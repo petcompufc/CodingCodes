@@ -1,5 +1,7 @@
 package janelas;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.io.*;
 
 public class cadastrarProduto extends javax.swing.JFrame {
 
@@ -23,6 +25,7 @@ public class cadastrarProduto extends javax.swing.JFrame {
         btCancelar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         arDescricao = new javax.swing.JTextArea();
+        btLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("CodingDiscos - Cadastrar Produto");
@@ -56,6 +59,13 @@ public class cadastrarProduto extends javax.swing.JFrame {
         arDescricao.setRows(5);
         jScrollPane2.setViewportView(arDescricao);
 
+        btLimpar.setText("Limpar");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimparActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,30 +76,30 @@ public class cadastrarProduto extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(tituloJanela))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(artista)
-                            .addComponent(titulo)
-                            .addComponent(descricao))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cmpTitulo)
-                                        .addComponent(cmpArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(preco)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmpPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(10, 10, 10)))))
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(34, 34, 34)
+                            .addComponent(btConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(artista)
+                                .addComponent(titulo)
+                                .addComponent(descricao))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(preco)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cmpPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane2)
+                                    .addComponent(cmpArtista)
+                                    .addComponent(cmpTitulo))))))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,14 +118,15 @@ public class cadastrarProduto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(descricao)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmpPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(preco))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btConfirmar)
-                    .addComponent(btCancelar))
+                    .addComponent(btCancelar)
+                    .addComponent(btLimpar))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -136,9 +147,87 @@ public class cadastrarProduto extends javax.swing.JFrame {
     // FUNCIONALIDADES DO BOTÃO "CONFIRMAR"
     ///////////////////////////////////
     private void btConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmarActionPerformed
+        String titulo = cmpTitulo.getText();
+        String artista = cmpArtista.getText();
+        String descricao = arDescricao.getText();
+        String preco = cmpPreco.getText();
         
+        if(titulo.equals("") || artista.equals("") ||
+                descricao.equals("") || preco.equals("")){
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos!", 
+                                          "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            File file;
+            String aux1, aux2, aux3;
+            int qtdProdutos;
+            
+            try{
+                // ---------------------------------------
+                // Abrir o arquivo "statusLoja.txt" e ler
+                // quantos produtos tem cadastrado!
+                file = new File("database/statusLoja.txt");
+                FileReader fReader = new FileReader(file);
+                BufferedReader bReader = new BufferedReader(fReader);
+                
+                aux1 = bReader.readLine(); 
+                aux2 = bReader.readLine(); 
+                aux3 = bReader.readLine(); 
+                qtdProdutos = Integer.parseInt(bReader.readLine());
+                
+                bReader.close();
+                
+                // -------------------------------------
+                // Cadastrar o Produto
+                qtdProdutos += 1;
+                
+                file = new File("database/produtos/" + qtdProdutos + ".txt");
+                file.createNewFile();
+                
+                FileWriter fWriter = new FileWriter(file);
+                
+                fWriter.write(cmpTitulo.getText() + "\n");
+                fWriter.write(cmpArtista.getText() + "\n");
+                fWriter.write(arDescricao.getText() + "\n");
+                fWriter.write(cmpPreco.getText() + "\n");
+                
+                fWriter.close();
+                
+                // Atualizar a quantidade de produtos cadastrados
+                file = new File("database/statusLoja.txt");
+                fWriter = new FileWriter(file);
+                
+                fWriter.write(aux1 + "\n");
+                fWriter.write(aux2 + "\n");
+                fWriter.write(aux3 + "\n");
+                fWriter.write(qtdProdutos + "\n");
+                
+                fWriter.close();
+                
+                // Apagar tudo que tem escrito
+                cmpTitulo.setText("");
+                cmpArtista.setText("");
+                arDescricao.setText("");
+                cmpPreco.setText("");
+                
+                JOptionPane.showMessageDialog(this, "Cadastro com sucesso!", 
+                                            "Sucesso!", JOptionPane.PLAIN_MESSAGE);
+                
+            } catch(Exception e){}
+           
+            
+            
+            
+        }
     }//GEN-LAST:event_btConfirmarActionPerformed
 
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -150,7 +239,23 @@ public class cadastrarProduto extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btCancelarActionPerformed
 
+    
+    
+    
+    
+    // FUNCIONALIDADES DO BOTÃO "LIMPAR"
+    ///////////////////////////////////
+    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
+        cmpArtista.setText("");
+        cmpTitulo.setText("");
+        cmpPreco.setText("");
+        arDescricao.setText("");
+    }//GEN-LAST:event_btLimparActionPerformed
 
+
+    
+    
+    
     
     
     
@@ -193,6 +298,7 @@ public class cadastrarProduto extends javax.swing.JFrame {
     private javax.swing.JLabel artista;
     private javax.swing.JButton btCancelar;
     private javax.swing.JButton btConfirmar;
+    private javax.swing.JButton btLimpar;
     private javax.swing.JTextField cmpArtista;
     private javax.swing.JTextField cmpPreco;
     private javax.swing.JTextField cmpTitulo;
